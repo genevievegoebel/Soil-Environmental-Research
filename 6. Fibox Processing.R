@@ -8,6 +8,7 @@ setwd("/Users/goeb_genevieve/Desktop/Data Analysis/Hicks Pries/Data")
 
 #Load packages
 library(tidyverse)
+library(lubridate)
 
 #### Find Files ####
 
@@ -22,15 +23,17 @@ k=0
 
 for(i in files){
   file <- read.csv(i, skip = 1, header = TRUE)
-  file <- file[,c(2,7,9)]
-  #for(k in file$Time){
-    #if(difftime() > 2)
-  #}
+  file$DateTime <- as.POSIXct(paste(file$Date, file$Time), format = "%m/%d/%Y %H:%M:%S")
+  file <- file[,c(7,9,56)]
+  file <- file[-c(23, 24, 48, 49),]
 }
 
-for(k in file$Time){
-  if(difftime() > 2){
-    
+for(k in file$DateTime){
+  k1 <- strptime(k, "%Y-%m-%d %H:%M:%0S")
+  k2 <- strptime((k+1), "%Y-%m-%d %H:%M:%0S")
+  if(as.numeric(k2-k1, units = "secs") > 2){
+    print(k)
+    #stop <- k
   }
 }
 
