@@ -8,12 +8,12 @@ setwd("/Users/goeb_genevieve/Desktop/Data Analysis/Hicks Pries/Data")
 
 #Load packages
 library(tidyverse)
-library(lubridate)
+library(dplyr)
 
 #### Find Files ####
 
 #Directs program to path = "yyyy-m-dd/measurement type" and reads all file names by pattern = ".suffix"
-files <- list.files(path = "2019-5-16 CCASE/Injections", pattern = "*.csv", full.names = TRUE, recursive = FALSE)
+files <- list.files(path = "2019-6-12 CCASE/Injections", pattern = "*.csv", full.names = TRUE, recursive = FALSE)
 files
 
 #### Processing ####
@@ -25,15 +25,12 @@ for(i in files){
   file <- read.csv(i, skip = 1, header = TRUE)
   file$DateTime <- as.POSIXct(paste(file$Date, file$Time), format = "%m/%d/%Y %H:%M:%S")
   file <- file[,c(7,9,56)]
-  file <- file[-c(23, 24, 48, 49),]
-}
-
-for(k in file$DateTime){
-  k1 <- strptime(k, "%Y-%m-%d %H:%M:%0S")
-  k2 <- strptime((k+1), "%Y-%m-%d %H:%M:%0S")
-  if(as.numeric(k2-k1, units = "secs") > 2){
-    print(k)
-    #stop <- k
+  file <- file[-nrow(file),]
+  for(k in 2:length(file$DateTime)){
+    diffTime <- as.integer(difftime(file$DateTime[k], file$DateTime[k-1]))
+    if(diffTime>2){
+      print("Found time gap")
+    }
   }
 }
 
