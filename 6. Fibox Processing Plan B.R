@@ -85,10 +85,38 @@ FUNsd = function(V){
 rrs0 <- rollapply(rrdata1, width=5, FUN = FUNsd, by.column=FALSE, fill=NA, align="right") 
 rrdata2 <- cbind(rrdata1, rrs0)
 
+
+
+
+
+
+
+
+
+#Give each section where the slope is consistent an unique number to allow the use of apply
+length <- as.numeric(length(rrdata2$rrs0))
+index <- vector(mode = "numeric", length = length)
+counter = 1
+
+str(rrdata2)
+for(i in 10:length){
+  if(rrdata2$rrs0[i] > rrdata2$rrs0[i-1]){
+    index[i]=counter
+    counter=counter+1
+  } else if(rrdata2$rrs0[i] == rrdata2$rrs0[i-1]){
+      index[i] = index[i-1]
+    } else{
+      index[i]=NA
+    }
+}
+
+rrdata2 <- cbind(rrdata2, index)
+
 #See how well fluxes were ID'd with the method
 ggplot(rrdata2) +
   geom_line(aes(x=DT, y=Value), colour="black")+
-  geom_point(aes(x=DT, y=rrs0), color="green")+ #peaks ID'd with calculus
+  geom_point(aes(x=DT, y=rrs0), color="blue")+ #peaks ID'd with calculus
+  geom_point(aes(x=DT, y=index), color="green")+
   scale_y_continuous(limits = c(19.75, 21.25)) #set scale for CO2
 
 
