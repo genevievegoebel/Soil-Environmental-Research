@@ -1,7 +1,7 @@
-##Harvard Forest Gas Well Data Processing and ARQ Calculation
-
-#Written by Genevieve Goebel and Caitlin Hicks Pries
-#Edited February 24, 2020
+# # # # # # # # # # # # # # # # # # # # # #
+#  Gas Well Data & ARQ Calculation Code   #
+#       GG & CHP February 24, 2020        #
+# # # # # # # # # # # # # # # # # # # # # #
 
 #Change as appropriate for computer in use
 setwd("/Users/goeb_genevieve/Desktop/Data Analysis/Hicks Pries/Data/ARQ Calculations/")
