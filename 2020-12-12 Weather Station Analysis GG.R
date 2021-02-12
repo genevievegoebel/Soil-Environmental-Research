@@ -1,7 +1,7 @@
-#Weather Station Data Processing
-
-#Written by Genevieve Goebel
-#Edited on December 12, 2020
+# # # # # # # # # # # # # # # # # # # # # #
+#     Weather Station Processing Code     #
+#          GG December 12, 2020           #
+# # # # # # # # # # # # # # # # # # # # # #
 
 install.packages("tidyverse")
 install.packages("ggplot2")
