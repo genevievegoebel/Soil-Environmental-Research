@@ -1,9 +1,7 @@
-##Picarro Calibration Processing
-
-#Written by Genevieve Goebel
-#Edited February 5, 2021
-
-
+# # # # # # # # # # # # # # # # # # # # # #
+#        Picarro Calibration Code         #
+#          GG February 5, 2021            #
+# # # # # # # # # # # # # # # # # # # # # #
 
 #### Initial Setup ####
 #Install packages
