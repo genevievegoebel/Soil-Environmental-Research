@@ -1,8 +1,7 @@
-## Depthwise CO2 Production Calculations for the Harvard Forest
-
-#Written by Genevieve Goebel and Caitlin Hicks Pries
-#Edited February 26 - June 17, 2020
-
+# # # # # # # # # # # # # # # # # # # # # #
+#      Depthwise CO2 Production Code      #
+#        GG & CHP June 17, 2020           #
+# # # # # # # # # # # # # # # # # # # # # #
 
 #### Note ####
 #Running ARQ Code is a prerequisite for calculating CO2 production
