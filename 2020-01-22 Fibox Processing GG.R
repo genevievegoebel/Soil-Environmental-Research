@@ -1,7 +1,7 @@
-##Fiber Optic Data Processing
-
-#Written by Genevieve Goebel
-#Edited January 22, 2020
+# # # # # # # # # # # # # # # # # # # # # #
+#     Fiber-Optic Data Processing Code    #
+#            GG January 22, 2020          #
+# # # # # # # # # # # # # # # # # # # # # #
 
 #### Initial Setup ####
 
