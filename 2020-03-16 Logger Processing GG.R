@@ -1,7 +1,7 @@
-#Logger Data Processing
-
-#Written by Genevieve Goebel
-#Edited March 16-20, 2020
+# # # # # # # # # # # # # # # # # # # # # #
+#      Mayfly Logger Processing Code      #
+#          GG March 16-20, 2020           #
+# # # # # # # # # # # # # # # # # # # # # #
 
 #Change as appropriate for computer in use
 setwd("/Users/goeb_genevieve/Desktop/Thesis/Data/Data Analysis/Logger Processing/")
